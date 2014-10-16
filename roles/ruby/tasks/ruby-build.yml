@@ -1,0 +1,43 @@
+---
+- name: git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  command: git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build creates=~/.rbenv/plugins/ruby-build/
+  tags:
+    - rbenv
+
+- name: add rbenv initialization to profile
+  template: src=rbenv.sh.j2 dest=/etc/profile.d/rbenv.sh owner=root group=root mode=0755
+  sudo: true
+  tags:
+    - rbenv
+
+- name: install build depends by Ruby
+  yum: name={{ item }} state=present
+  with_items:
+    - gcc
+    - openssl-devel
+    - libyaml-devel
+    - readline-devel
+    - zlib-devel
+    - git
+  sudo: true
+  tags:
+    - rbenv
+
+- name: check ruby rbenv installed
+  command: rbenv versions
+  register: ruby_installed
+  ignore_errors: yes
+  tags:
+    - rbenv
+
+- name: rbenv install 2.1.0
+  command: rbenv install 2.1.0
+  when: ruby_installed.rc != 0
+  tags:
+    - rbenv
+
+- name: rbenv global 2.1.0
+  command: rbenv global 2.1.0
+  when: ruby_installed.rc != 0
+  tags:
+    - rbenv

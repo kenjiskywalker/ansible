@@ -1,0 +1,4 @@
+- name: git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  command: git clone https://github.com/sstephenson/rbenv.git ~/.rbenv creates=~/.rbenv
+  tags:
+    - rbenv
