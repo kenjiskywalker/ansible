@@ -30,14 +30,14 @@
   tags:
     - rbenv
 
-- name: rbenv install 2.1.0
-  command: rbenv install 2.1.0
+- name: rbenv install 2.1.3
+  command: rbenv install 2.1.3
   when: ruby_installed.rc != 0
   tags:
     - rbenv
 
-- name: rbenv global 2.1.0
-  command: rbenv global 2.1.0
+- name: rbenv global 2.1.3
+  command: rbenv global 2.1.3
   when: ruby_installed.rc != 0
   tags:
     - rbenv
