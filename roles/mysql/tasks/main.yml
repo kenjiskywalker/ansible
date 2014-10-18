@@ -6,9 +6,11 @@
   sudo: true
   tags:
     - mysql
+    - install
 
 - name: Start MySQL service
   action: service name=mysqld state=started
   sudo: true
   tags:
     - mysql
+    - install

@@ -1,4 +1,12 @@
 - name: git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
   command: git clone https://github.com/sstephenson/rbenv.git ~/.rbenv creates=~/.rbenv
   tags:
+    - ruby
+    - rbenv
+
+- name: add rbenv initialization to profile
+  template: src=rbenv.sh.j2 dest=/etc/profile.d/rbenv.sh owner=root group=root mode=0755
+  sudo: true
+  tags:
+    - ruby
     - rbenv
