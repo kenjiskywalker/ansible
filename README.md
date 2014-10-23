@@ -4,13 +4,13 @@
 - Rails 4.1.6
 - MySQL 5.1.73
 
-1. vagrant up
+### 1. vagrant up
 
 ```
 $ vagrant up
 ```
 
-2. vagrant ssh
+### 2. vagrant ssh
 
 ```
 $ vagrant ssh
