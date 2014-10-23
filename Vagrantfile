@@ -1,10 +1,3 @@
-#
-# カレントディレクトリのVagrantfileを利用する場合
-# 「VAGRANT_CWD」をカレントディレクトリで指定する必要があります
-#
-# VAGRANT_CWD=`pwd`
-# echo ${VAGRANT_CWD}
-
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
