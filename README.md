@@ -1,4 +1,4 @@
-# Provisoning by ansible on Vagrant 
+# Provisoning by Ansible on Vagrant 
 
 - Ruby 2.1.3p242
 - Rails 4.1.6
