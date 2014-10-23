@@ -1,5 +1,5 @@
 - name: check Rails installed
-  shell: cd; bash -lc "rails -v | cut -f 2 -d ' '"
+  shell: rails -v | cut -f 2 -d ' '
   register: rails_installed
   ignore_errors: yes
   tags:
